@@ -41,7 +41,7 @@ class ShoppingListApplication {
 
                         product.setId(productIdSequence);
 
-                        ShoppingValidation victim = new ShoppingValidation(name, price, category, percent);
+                        ProductValidation victim = new ProductValidation(name, price, category, percent);
                         victim.productValidationName(name);
 
                         while (victim.productValidationName(name) == 1) {
@@ -143,7 +143,7 @@ class ShoppingListApplication {
                 }
 
             } catch (Exception e) {
-                System.out.println("Error! Please try again.");
+                System.out.println("Error! Please try again. You insert incorrect selection value.");
             }
         }
     }

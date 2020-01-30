@@ -3,14 +3,14 @@ package src.com.javaguru.shoppinglist;
 
 import java.math.BigDecimal;
 
-public class ShoppingValidation {
+public class ProductValidation {
 
     public String name;
     public BigDecimal price;
     public String category;
     public BigDecimal percent;
 
-    public ShoppingValidation(String name, BigDecimal price, String category, BigDecimal percent) {
+    public ProductValidation(String name, BigDecimal price, String category, BigDecimal percent) {
         this.name = name;
         this.price = price;
         this.category = category;
