@@ -10,6 +10,8 @@ public class ProductValidation {
     public String category;
     public BigDecimal percent;
 
+    
+
     public ProductValidation(String name, BigDecimal price, String category, BigDecimal percent) {
         this.name = name;
         this.price = price;
