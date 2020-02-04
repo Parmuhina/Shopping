@@ -1,60 +1,51 @@
 package src.com.javaguru.shoppinglist;
 
-
 import java.math.BigDecimal;
 
 public class ProductValidation {
-
     public String name;
     public BigDecimal price;
     public String category;
     public BigDecimal percent;
-
-
 
     public ProductValidation(String name, BigDecimal price, String category, BigDecimal percent) {
         this.name = name;
         this.price = price;
         this.category = category;
         this.percent = percent;
-
     }
 
     public int productValidationName(String name) {
-
-
         if (name.length() < 3 | name.length() > 32) {
-            int i = 1;
-            return i;
+            int validationNumber = 1;
+            return validationNumber;
         } else {
-            int i = 2;
-            return i;
+            int validationNumber = 2;
+            return validationNumber;
         }
-
     }
 
     public int productValidationPrice(BigDecimal price) {
-        BigDecimal x = new BigDecimal("0");
-        int k=price.compareTo(x);
-        if (k == -1) {
-            int i = 1;
-            return i;
+        BigDecimal bigDecimalNull = new BigDecimal("0");
+        int comparisonResult=price.compareTo(bigDecimalNull);
+        if (comparisonResult == -1) {
+            int validationNumber = 1;
+            return validationNumber;
         } else {
-            int i = 2;
-            return i;
+            int validationNumber = 2;
+            return validationNumber;
         }
     }
 
     public int productValidationPercent(BigDecimal percent) {
-        BigDecimal x = new BigDecimal("100");
-        int k=percent.compareTo(x);
-        if (k == 1 ) {
-            int i = 1;
-            return i;
+        BigDecimal bigDecimalHundred = new BigDecimal("100");
+        int comparisonResult=percent.compareTo(bigDecimalHundred);
+        if (comparisonResult == 1 ) {
+            int validationNumber = 1;
+            return validationNumber;
         } else {
-            int i = 2;
-            return i;
+            int validationNumber = 2;
+            return validationNumber;
         }
     }
-
 }

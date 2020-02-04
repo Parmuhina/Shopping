@@ -5,8 +5,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-
-
 class ShoppingListApplication {
 
     public static void main(String[] args) {
@@ -31,19 +29,14 @@ class ShoppingListApplication {
                         String category = scanner.nextLine();
                         System.out.println("Enter product percents: ");
                         BigDecimal percent = new BigDecimal(scanner.nextLine());
-
-
                         Product product = new Product();
                         product.setName(name);
                         product.setPrice(price);
                         product.setCategory(category);
                         product.setPercent(percent);
-
                         product.setId(productIdSequence);
-
                         ProductValidation victim = new ProductValidation(name, price, category, percent);
                         victim.productValidationName(name);
-
                         while (victim.productValidationName(name) == 1) {
                             product.setName(name);
                             try {
@@ -57,7 +50,6 @@ class ShoppingListApplication {
                                 System.out.println("Product name need to be more than 1 simbol. Try one more time. ");
                             }
                         }
-
                         while (victim.productValidationPrice(price) == 1) {
                             product.setPrice(price);
                             try {
@@ -71,7 +63,6 @@ class ShoppingListApplication {
                                 System.out.println("Product price need to be more than 0 value. Try one more time. ");
                             }
                         }
-
                         while (victim.productValidationPercent(percent) == 1) {
                             product.setPercent(percent);
                             try {
@@ -86,7 +77,6 @@ class ShoppingListApplication {
                                         " Try one more time. ");
                             }
                         }
-
                         System.out.println("Do you want to enter text about product? Yes - press 7. No - press 8.");
                         Integer answer = Integer.valueOf(scanner.nextLine());
                         //System.out.println("Enter product text: ");
@@ -96,8 +86,6 @@ class ShoppingListApplication {
                             System.out.println("Do you want to enter text about product? Yes - press 7. No - press 8.");
                             answer = Integer.valueOf(scanner.nextLine());
                             try {
-
-
                                 switch (answer) {
                                     case 7:
                                         System.out.println("Enter product text: ");
@@ -107,11 +95,9 @@ class ShoppingListApplication {
                                         product.setText(" ");
                                 }
                             }catch(Exception e){
-                                System.out.println("try one more time.");
+                                System.out.println("Try one more time.");
                             }
                         }
-
-
                         productRepository.put(productIdSequence, product);
                         productIdSequence++;
                         System.out.println("Result: " + product.getId());
@@ -122,26 +108,19 @@ class ShoppingListApplication {
                         System.out.println(findProductResult);
                     case 3:
                         return;
-
                     case 4:
                         System.out.println("Enter product id for changing: ");
                         long id1 = scanner.nextLong();
                         Product changeProductResult = productRepository.remove(id1);
                         System.out.println("Changed product "+changeProductResult);
-
                         break ;
-
-
-
                     case 5:
                         System.out.println("Enter product id for deleting: ");
                         id = scanner.nextLong();
                         Product deleteProductResult = productRepository.remove(id);
                         System.out.println("Product "+deleteProductResult+"is deleted.");
                         return;
-
                 }
-
             } catch (Exception e) {
                 System.out.println("Error! Please try again. You insert incorrect selection value.");
             }
